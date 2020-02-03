@@ -1,4 +1,4 @@
-package br.ufba.mata62.SistemaAcademico.controller;
+package controller;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -12,9 +12,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-import br.ufba.mata62.SistemaAcademico.domain.Curso;
-import br.ufba.mata62.SistemaAcademico.domain.Historico;
-import br.ufba.mata62.SistemaAcademico.service.EscritorService;
+import domain.Curso;
+import domain.Historico;
+import service.EscritorService;
+
 import java.awt.SystemColor;
 import java.awt.Color;
 

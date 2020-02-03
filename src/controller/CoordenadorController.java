@@ -1,4 +1,4 @@
-package br.ufba.mata62.SistemaAcademico.controller;
+package controller;
 
 
 import java.awt.EventQueue;
@@ -12,15 +12,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-
-import br.ufba.mata62.SistemaAcademico.domain.Aluno;
-import br.ufba.mata62.SistemaAcademico.domain.Coordenador;
-import br.ufba.mata62.SistemaAcademico.domain.Universidade;
-import br.ufba.mata62.SistemaAcademico.service.EscalonamentoScoreService;
-import br.ufba.mata62.SistemaAcademico.service.EscalonamentoSemestreService;
-import br.ufba.mata62.SistemaAcademico.service.EscalonamentoService;
-import br.ufba.mata62.SistemaAcademico.service.EscritorHtmlService;
-import br.ufba.mata62.SistemaAcademico.service.EscritorTxtService;
+import domain.Aluno;
+import domain.Coordenador;
+import domain.Universidade;
+import service.EscalonamentoScoreService;
+import service.EscalonamentoSemestreService;
+import service.EscalonamentoService;
+import service.EscritorHtmlService;
+import service.EscritorTxtService;
 
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;

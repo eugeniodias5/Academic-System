@@ -1,4 +1,4 @@
-package br.ufba.mata62.SistemaAcademico.repository;
+package repository;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

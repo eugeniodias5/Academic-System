@@ -1,4 +1,4 @@
-package br.ufba.mata62.SistemaAcademico.controller;
+package controller;
 
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -7,11 +7,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import br.ufba.mata62.SistemaAcademico.domain.Aluno;
-import br.ufba.mata62.SistemaAcademico.domain.Coordenador;
-import br.ufba.mata62.SistemaAcademico.service.CoordenadorService;
-import br.ufba.mata62.SistemaAcademico.service.CursoService;
+import domain.Aluno;
+import domain.Coordenador;
 import enums.Conceito;
+import service.CoordenadorService;
+import service.CursoService;
 
 import javax.swing.JLabel;
 

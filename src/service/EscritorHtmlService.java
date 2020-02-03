@@ -1,13 +1,13 @@
-package br.ufba.mata62.SistemaAcademico.service;
+package service;
 
 import java.util.Iterator;
 
-import br.ufba.mata62.SistemaAcademico.domain.Aluno;
-import br.ufba.mata62.SistemaAcademico.domain.Curso;
-import br.ufba.mata62.SistemaAcademico.domain.DisciplinaCursada;
-import br.ufba.mata62.SistemaAcademico.domain.DisciplinaSelecionada;
-import br.ufba.mata62.SistemaAcademico.domain.Historico;
-import br.ufba.mata62.SistemaAcademico.repository.EscreveHtmlRepository;
+import domain.Aluno;
+import domain.Curso;
+import domain.DisciplinaCursada;
+import domain.DisciplinaSelecionada;
+import domain.Historico;
+import repository.EscreveHtmlRepository;
 
 public class EscritorHtmlService extends EscritorService{
 	

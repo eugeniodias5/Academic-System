@@ -1,9 +1,9 @@
-package br.ufba.mata62.SistemaAcademico.service;
+package service;
 
 import java.util.Iterator;
 
-import br.ufba.mata62.SistemaAcademico.domain.Curso;
-import br.ufba.mata62.SistemaAcademico.domain.DisciplinaSelecionada;
+import domain.Curso;
+import domain.DisciplinaSelecionada;
 
 public class CursoService {
 	// Método para retornar uma disciplinaSelecionada pelo seu código

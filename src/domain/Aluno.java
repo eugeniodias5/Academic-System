@@ -1,4 +1,4 @@
-package br.ufba.mata62.SistemaAcademico.domain;
+package domain;
 
 public class Aluno extends Pessoa {
 

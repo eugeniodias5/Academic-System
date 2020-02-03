@@ -1,9 +1,9 @@
-package br.ufba.mata62.SistemaAcademico.service;
+package service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufba.mata62.SistemaAcademico.domain.Aluno;
+import domain.Aluno;
 
 public class EscalonamentoSemestreService implements EscalonamentoService{
 	

@@ -1,4 +1,4 @@
-package br.ufba.mata62.SistemaAcademico.domain;
+package domain;
 
 import java.util.Collections;
 import java.util.Iterator;

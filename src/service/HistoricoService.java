@@ -1,9 +1,9 @@
-package br.ufba.mata62.SistemaAcademico.service;
+package service;
 
 import java.util.List;
 
-import br.ufba.mata62.SistemaAcademico.domain.DisciplinaCursada;
-import br.ufba.mata62.SistemaAcademico.domain.Historico;
+import domain.DisciplinaCursada;
+import domain.Historico;
 import enums.Conceito;
 
 public class HistoricoService {

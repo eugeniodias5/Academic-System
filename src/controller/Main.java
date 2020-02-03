@@ -1,4 +1,4 @@
-package br.ufba.mata62.SistemaAcademico.controller;
+package controller;
 
 import java.awt.EventQueue;
 
@@ -11,13 +11,14 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JLabel;
 
-import br.ufba.mata62.SistemaAcademico.domain.Coordenador;
-import br.ufba.mata62.SistemaAcademico.domain.Disciplina;
-import br.ufba.mata62.SistemaAcademico.domain.Universidade;
-import br.ufba.mata62.SistemaAcademico.service.UniversidadeService;
-
+import service.UniversidadeService;
 
 import javax.swing.JTextField;
+
+import domain.Coordenador;
+import domain.Disciplina;
+import domain.Universidade;
+
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

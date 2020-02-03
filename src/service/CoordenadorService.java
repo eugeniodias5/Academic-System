@@ -1,11 +1,11 @@
-package br.ufba.mata62.SistemaAcademico.service;
+package service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import br.ufba.mata62.SistemaAcademico.domain.Aluno;
-import br.ufba.mata62.SistemaAcademico.domain.Coordenador;
-import br.ufba.mata62.SistemaAcademico.domain.DisciplinaCursada;
+import domain.Aluno;
+import domain.Coordenador;
+import domain.DisciplinaCursada;
 import enums.Conceito;
 
 public class CoordenadorService {

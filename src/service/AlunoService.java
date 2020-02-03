@@ -1,6 +1,6 @@
-package br.ufba.mata62.SistemaAcademico.service;
+package service;
 
-import br.ufba.mata62.SistemaAcademico.domain.Aluno;
+import domain.Aluno;
 
 public class AlunoService {
 	

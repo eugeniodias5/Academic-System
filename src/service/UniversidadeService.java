@@ -1,17 +1,17 @@
-package br.ufba.mata62.SistemaAcademico.service;
+package service;
 
 import java.util.ArrayList;
 
 import java.util.List;
 
-import br.ufba.mata62.SistemaAcademico.domain.Aluno;
-import br.ufba.mata62.SistemaAcademico.domain.Coordenador;
-import br.ufba.mata62.SistemaAcademico.domain.Curso;
-import br.ufba.mata62.SistemaAcademico.domain.Disciplina;
-import br.ufba.mata62.SistemaAcademico.domain.Universidade;
-import br.ufba.mata62.SistemaAcademico.repository.LeitorTxtRepository;
+import domain.Aluno;
+import domain.Coordenador;
+import domain.Curso;
+import domain.Disciplina;
+import domain.Universidade;
 import enums.Contrato;
 import enums.Nivel;
+import repository.LeitorTxtRepository;
 
 public class UniversidadeService {
 	// Pegar uma disciplina pelo código

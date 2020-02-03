@@ -1,14 +1,14 @@
-package br.ufba.mata62.SistemaAcademico.repository;
+package repository;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import br.ufba.mata62.SistemaAcademico.domain.Curso;
-import br.ufba.mata62.SistemaAcademico.domain.Disciplina;
-import br.ufba.mata62.SistemaAcademico.domain.DisciplinaSelecionada;
-import br.ufba.mata62.SistemaAcademico.domain.Universidade;
-import br.ufba.mata62.SistemaAcademico.service.UniversidadeService;
+import domain.Curso;
+import domain.Disciplina;
+import domain.DisciplinaSelecionada;
+import domain.Universidade;
+import service.UniversidadeService;
 
 public class LeitorTxtRepository {
 	public static void leitor(Universidade universidade) {

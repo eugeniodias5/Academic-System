@@ -1,8 +1,8 @@
-package br.ufba.mata62.SistemaAcademico.service;
+package service;
 
-import br.ufba.mata62.SistemaAcademico.domain.Curso;
-import br.ufba.mata62.SistemaAcademico.domain.Historico;
-import br.ufba.mata62.SistemaAcademico.repository.EscreveHtmlRepository;
+import domain.Curso;
+import domain.Historico;
+import repository.EscreveHtmlRepository;
 
 public abstract class EscritorService {
 	public abstract String escreveHistorico(Historico historico);

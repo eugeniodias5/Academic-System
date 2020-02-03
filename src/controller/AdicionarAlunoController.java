@@ -1,4 +1,4 @@
-package br.ufba.mata62.SistemaAcademico.controller;
+package controller;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -9,10 +9,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import br.ufba.mata62.SistemaAcademico.domain.Aluno;
-import br.ufba.mata62.SistemaAcademico.domain.Coordenador;
-import br.ufba.mata62.SistemaAcademico.domain.Universidade;
-import br.ufba.mata62.SistemaAcademico.service.CoordenadorService;
+import domain.Aluno;
+import domain.Coordenador;
+import domain.Universidade;
+import service.CoordenadorService;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
