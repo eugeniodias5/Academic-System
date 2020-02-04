@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.EventQueue;
+
 import java.awt.Font;
 
 import javax.swing.JFrame;
@@ -24,7 +25,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.SystemColor;
 
-public class darNotaController extends JFrame {
+public class DarNotaController extends JFrame {
 
 	private JPanel contentPane;
 	private JFormattedTextField InputNota;
@@ -48,7 +49,7 @@ public class darNotaController extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public darNotaController(Coordenador coordenador, int index) {
+	public DarNotaController(Coordenador coordenador, int index) {
 		
 		Aluno aluno = coordenador.getAlunos().get(index);
 		setBounds(100, 100, 536, 330);

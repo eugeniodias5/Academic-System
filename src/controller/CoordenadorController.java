@@ -49,7 +49,7 @@ public class CoordenadorController extends JFrame {
 	}
 	
 	//Método que preenche lista de escalonamento, por escalonamento ou score
-	private void preencheLista(EscalonamentoService escalonamento, Coordenador coordenador) {
+	public void preencheLista(EscalonamentoService escalonamento, Coordenador coordenador) {
 		coordenador.setAlunos(escalonamento.organizaAlunos(coordenador.getAlunos()));
 		
 		list.removeAll();
@@ -64,22 +64,24 @@ public class CoordenadorController extends JFrame {
 	 */
 	public CoordenadorController(Universidade universidade, Coordenador coordenador) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 726, 516);
+		setBounds(100, 100, 726, 556);
 		contentPane = new JPanel();
 		contentPane.setBackground(SystemColor.info);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setDefaultCloseOperation(HIDE_ON_CLOSE);
+
 		
 		JLabel lblTitulo = new JLabel("Bem Vindo, " + coordenador.getNome() + "!");
-		lblTitulo.setBounds(176, 57, 372, 20);
+		lblTitulo.setBounds(0, 55, 704, 75);
 		contentPane.add(lblTitulo);
 		lblTitulo.setFont(new Font("Times New Roman", Font.BOLD, 30));
 		lblTitulo.setHorizontalAlignment(JTextField.CENTER);
 		
 		list = new List();
 		
-		list.setBounds(0, 232, 704, 153);
+		list.setBounds(0, 232, 704, 196);
 		contentPane.add(list);
 		list.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		
@@ -105,13 +107,13 @@ public class CoordenadorController extends JFrame {
 		
 		JButton btnHistorico = new JButton("Visualizar Histórico");
 		btnHistorico.setBackground(Color.WHITE);
-		btnHistorico.setBounds(162, 429, 190, 29);
+		btnHistorico.setBounds(162, 469, 190, 29);
 		contentPane.add(btnHistorico);
 		
 		JButton btnCurrculo = new JButton("Visualizar Currículo");
 		btnCurrculo.setBackground(Color.WHITE);
 		
-		btnCurrculo.setBounds(367, 429, 181, 29);
+		btnCurrculo.setBounds(372, 469, 181, 29);
 		contentPane.add(btnCurrculo);
 		
 		JButton btnAdicionar = new JButton("Adicionar Aluno");
@@ -135,12 +137,12 @@ public class CoordenadorController extends JFrame {
 		JRadioButton rdbtnTxt = new JRadioButton("TXT");
 		rdbtnTxt.setBackground(SystemColor.info);
 		rdbtnTxt.setSelected(true);
-		rdbtnTxt.setBounds(276, 391, 76, 29);
+		rdbtnTxt.setBounds(276, 434, 76, 29);
 		contentPane.add(rdbtnTxt);
 		
 		JRadioButton rdbtnHtml = new JRadioButton("HTML");
 		rdbtnHtml.setBackground(SystemColor.info);
-		rdbtnHtml.setBounds(375, 391, 155, 29);
+		rdbtnHtml.setBounds(372, 434, 155, 29);
 		contentPane.add(rdbtnHtml);
 		
 		ButtonGroup grupoBotoes2 = new ButtonGroup();
@@ -156,7 +158,7 @@ public class CoordenadorController extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				if(rdbtnSemestre.isEnabled()) {		
 					preencheLista(new EscalonamentoSemestreService(), coordenador);
-			}
+				}
 			}
 		});	
 		
@@ -168,11 +170,13 @@ public class CoordenadorController extends JFrame {
 			}
 		});			
 		
+		CoordenadorController coordenadorController = this;
+		
 		//Abrindo tela de adição de aluno
 		btnAdicionar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				AdicionarAlunoController telaAdicionar = new AdicionarAlunoController(universidade, coordenador);
+				AdicionarAlunoController telaAdicionar = new AdicionarAlunoController(coordenadorController, universidade, coordenador);
 				telaAdicionar.setVisible(true);
 			}
 		});
@@ -182,7 +186,7 @@ public class CoordenadorController extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				if(list.getSelectedIndex() >= 0) { //Se foi selecionado algum aluno, vai para a tela de dar nota
-				darNotaController nota = new darNotaController(coordenador, list.getSelectedIndex());
+				DarNotaController nota = new DarNotaController(coordenador, list.getSelectedIndex());
 				nota.setVisible(true);
 				}
 			}

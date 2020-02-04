@@ -24,12 +24,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JPasswordField;
 import java.awt.SystemColor;
+import java.awt.Window;
 
 public class Main {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JPasswordField textField_1;
+	private JTextField matriculaField;
+	private JPasswordField senhaField;
 	
 	Universidade universidade = new Universidade("Universidade Federal da Bahia", "UFBA", "20192",
 			new ArrayList<Disciplina>());
@@ -51,13 +52,14 @@ public class Main {
 	public Main() {
 		//Inicializando a universidade
 		//Pegar matrícula e senha dos coordenadores lá
-		UniversidadeService.inicializaUniversidade(universidade);;
+		UniversidadeService.inicializaUniversidade(universidade);
 		initialize();
 	}
 
 	
 	private void initialize() {
 		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setBackground(SystemColor.info);
 		frame.setBackground(SystemColor.info);
 		frame.setEnabled(true);
@@ -71,7 +73,7 @@ public class Main {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel titulo = new JLabel(tituloStr);
-		titulo.setBounds(28, 0, 704, 140);
+		titulo.setBounds(0, 10, 714, 140);
 		
 		frame.getContentPane().add(titulo);
 		
@@ -83,27 +85,27 @@ public class Main {
 		frame.getContentPane().add(lblMatricula);
 		lblMatricula.setFont(new Font("Times New Roman", Font.PLAIN, 22));
 		
-		textField = new JTextField();
-		textField.setBounds(240, 187, 302, 36);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
-		textField.setFont(new Font("Times New Roman", Font.PLAIN, 22));
+		matriculaField = new JTextField();
+		matriculaField.setBounds(240, 187, 302, 36);
+		frame.getContentPane().add(matriculaField);
+		matriculaField.setColumns(10);
+		matriculaField.setFont(new Font("Times New Roman", Font.PLAIN, 22));
 		
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setBounds(137, 252, 80, 36);
 		frame.getContentPane().add(lblSenha);
 		lblSenha.setFont(new Font("Times New Roman", Font.PLAIN, 22));
 		
-		textField_1 = new JPasswordField();
-		textField_1.setBounds(240, 254, 302, 36);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
-		textField_1.setFont(new Font("Times New Roman", Font.PLAIN, 22));
+		senhaField = new JPasswordField();
+		senhaField.setBounds(240, 254, 302, 36);
+		frame.getContentPane().add(senhaField);
+		senhaField.setColumns(10);
+		senhaField.setFont(new Font("Times New Roman", Font.PLAIN, 22));
 		
 		JButton btnLogin = new JButton("LOGIN");
 		
 		JLabel lblErro = new JLabel("Matrícula ou senha inválida");
-		lblErro.setBounds(240, 403, 302, 36);
+		lblErro.setBounds(240, 414, 302, 36);
 		frame.getContentPane().add(lblErro);
 		
 		lblErro.setFont(new Font("Times New Roman", Font.BOLD, 24));
@@ -115,11 +117,11 @@ public class Main {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				Coordenador coordenador = UniversidadeService.getCoordenador
-						(universidade, textField.getText());
+						(universidade, matriculaField.getText());
 				
 				//Caso o coordenador não exista ou a senha esteja errada, exibe mensagem
 				//de erro
-				if(coordenador == null || !coordenador.getSenha().equals(textField_1.getText()))
+				if(coordenador == null || !coordenador.getSenha().equals(senhaField.getText())) 
 					lblErro.setVisible(true);
 				
 				else {
@@ -130,8 +132,19 @@ public class Main {
 			}
 		});
 		
-		btnLogin.setBounds(310, 343, 115, 29);
+		btnLogin.setBounds(269, 321, 237, 29);
 		frame.getContentPane().add(btnLogin);
+		
+		JButton btnCadastrarCoordenador = new JButton("CADASTRAR COORDENADOR");
+		btnCadastrarCoordenador.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CadastrarCoordenadorController control = new CadastrarCoordenadorController(universidade);
+				control.frame.setVisible(true);
+			}
+		});
+		btnCadastrarCoordenador.setBounds(269, 375, 237, 29);
+		frame.getContentPane().add(btnCadastrarCoordenador);
 		
 		
 	}

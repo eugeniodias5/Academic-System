@@ -13,9 +13,11 @@ import domain.Aluno;
 import domain.Coordenador;
 import domain.Universidade;
 import service.CoordenadorService;
+import service.EscalonamentoSemestreService;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -50,7 +52,7 @@ public class AdicionarAlunoController extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AdicionarAlunoController(Universidade universidade, Coordenador coordenador) {
+	public AdicionarAlunoController(CoordenadorController coordenadorController, Universidade universidade, Coordenador coordenador) {
 		setBounds(100, 100, 530, 394);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -150,7 +152,9 @@ public class AdicionarAlunoController extends JFrame {
 					e1.printStackTrace();
 					System.out.println("Aluno já existe");
 				}
-				
+								
+				//Preenchendo a lista de alunos após um novo aluno ter sido adicionado
+				coordenadorController.preencheLista(new EscalonamentoSemestreService(), coordenador);
 				dispose();	//Fecha frame
 				}
 			}

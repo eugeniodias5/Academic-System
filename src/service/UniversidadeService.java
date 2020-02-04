@@ -48,6 +48,18 @@ public class UniversidadeService {
 		return null;
 	}
 	
+	//Retorna um coordenador pelo curso
+		public static Coordenador getCoordenador(Universidade universidade, Curso curso) {
+			Coordenador coordenador = null;
+			for (int index = 0; index < universidade.getCoordenadores().size(); index++) {
+				coordenador = universidade.getCoordenadores().get(index);
+				if(coordenador.getCurso().equals(curso))
+					return coordenador;
+			}
+			
+			return null;
+		}
+	
 	//Método que retorna alunos de um curso inscritos na universidade.
 	//Utilizado para adicionar coordenadores
 	public static List<Aluno> getAlunosCurso(Universidade universidade, Curso curso){
@@ -71,36 +83,6 @@ public class UniversidadeService {
 public static void inicializaUniversidade(Universidade universidade) {
 	// Lendo txt da universidade
 	LeitorTxtRepository.leitor(universidade);
-	
-	//Criando coordenadores
-	//Coordenador de engenharia de computação
-	Curso curso = UniversidadeService.getCurso(universidade, "186140");
-	
-	Aluno aluno = new Aluno("Helio", "23519", "201045", "rg", "cpf", UniversidadeService.getCurso(universidade, "186140"));
-	universidade.adicionaAluno(aluno);
-	
-	Aluno aluno2 = new Aluno("Fulano", "42354", "Senha", "rg", "cpf",
-			UniversidadeService.getCurso(universidade, "186140"));
-	universidade.adicionaAluno(aluno2);
-	
-	//Alunos de engenharia de computação
-	List<Aluno> alunos = UniversidadeService.getAlunosCurso(universidade, curso);
-	
-	Coordenador c1 = new Coordenador("Fulano", "2161", "senha", "rg", 
-			"cpf", Contrato.DEFINITIVO, Nivel.DOUTORADO, alunos, curso);
-	
-	//Coordenador de ciências da computação
-	curso = UniversidadeService.getCurso(universidade, "112140");
-			
-	//Alunos de engenharia de computação
-	alunos = UniversidadeService.getAlunosCurso(universidade, curso);
-			
-	Coordenador c2 = new Coordenador("Sicrano", "4051", "senha", "rg", 
-					"cpf", Contrato.DEFINITIVO, Nivel.DOUTORADO, alunos, curso);
-	
-	universidade.adicionaCoordenador(c1);
-	universidade.adicionaCoordenador(c2);
-	
 	
 }
 

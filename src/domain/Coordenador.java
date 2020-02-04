@@ -13,7 +13,6 @@ public class Coordenador extends Professor {
 
 	private Curso curso;
 	private List<Aluno> alunos;	//Lista de alunos do curso inscritos na universidade
-	private static ArrayList<Turma> turmas;
 
 	public Coordenador(String nome, String matricula, String senha, String rg, String cpf, Contrato contrato,
 			Nivel nivel, List<Aluno> alunos, Curso curso) {
@@ -22,7 +21,6 @@ public class Coordenador extends Professor {
 		
 		this.alunos = alunos;
 		
-		turmas = new ArrayList<Turma>();	
 		this.curso = curso;
 	}
 	
@@ -44,29 +42,5 @@ public class Coordenador extends Professor {
 		this.alunos = alunos;
 	}
 
-	public void criaTurma(Turma turma) {
-		/*turmas.add(turma);
-
-		Professor professor = turma.getProfessor();
-
-		// Buscando índice do professor
-		int index = universidade.getProfessores().indexOf(professor);
-
-		// Adicionando a turma ao professor
-		professor.adicionaTurma(turma);
-
-		universidade.alteraProfessor(professor, index);*/
-	}
-
-	public void excluiTurma(Turma turma) {
-
-		int index = turmas.indexOf(turma);
-		turmas.remove(index);
-	}
-
-	// GETTERS E SETTERS
-	public static List<Turma> getTurmas() {
-		return Collections.unmodifiableList(turmas);
-	}
 
 }
