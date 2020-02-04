@@ -10,4 +10,4 @@ Made with Java Swing, using the GUI interface for Eclipse WindowBuilder.
 ---
 # Running
 
-Run the main.java file inside the controller folder using a Java IDE, like Eclipse. 
+Run the Main.java file inside the controller folder using a Java IDE that supports Java Swing, like Eclipse. 
